@@ -1,0 +1,87 @@
+/* Custom Tabs Styling */
+.opportunities-section .nav-underline .nav-link {
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.opportunities-section .nav-underline .nav-link:hover {
+    color: #dc3545 !important;
+}
+
+/* Image Transition effect */
+.opportunity-img {
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.opportunity-img:hover {
+    transform: scale(1.05);
+}
+
+/* Red Accent for buttons and titles */
+.btn-danger {
+    background-color: #e31e24 !important; /* Matches the vibrant red in the reference image */
+    border-color: #e31e24 !important;
+}
+
+.text-danger {
+    color: #e31e24 !important;
+}
+.scale-hover {
+    transition: transform 0.2s ease-in-out;
+}
+
+.scale-hover:hover {
+    transform: scale(1.05);
+}
+
+.image-container {
+    position: relative;
+}
+
+.overlay-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    box-shadow: 0 4px 15px rgba(227, 30, 36, 0.4);
+}
+
+/* Ensure text doesn't wrap on small mobile screens for tabs */
+.nav-underline {
+    scrollbar-width: none; /* Firefox */
+}
+.nav-underline::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+/* Responsive Typography */
+@media (max-width: 768px) {
+    .h1-mobile {
+        font-size: 1.75rem; /* Shrinks the main title on mobile */
+    }
+    .h2-mobile {
+        font-size: 1.5rem; /* Shrinks the 60% stats on mobile */
+    }
+    
+    /* Makes images shorter on mobile to prevent long scrolling */
+    .opportunity-img {
+        height: 250px !important;
+    }
+}
+
+/* Hide scrollbar but keep functionality for the tabs */
+.nav-underline::-webkit-scrollbar {
+    display: none;
+}
+
+/* Ensure images don't stretch weirdly */
+.image-container img {
+    width: 100%;
+    display: block;
+}
+
+/* Add some spacing for the mobile button grid */
+.d-grid .btn {
+    margin-bottom: 1rem;
+}

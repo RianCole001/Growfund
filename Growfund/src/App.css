@@ -1,0 +1,21 @@
+.app-container {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: #0b1d2a;
+  color: #ffffff;
+}
+/* Custom Green for Kenya branding */
+.text-success {
+  color: #006633 !important;
+}
+
+.bg-success-subtle {
+  background-color: #e6f3ec !important;
+}
+

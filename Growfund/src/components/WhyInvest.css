@@ -1,0 +1,72 @@
+.reason-card {
+  transition: all 0.3s ease-in-out;
+  border-radius: 15px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* The "Interactive" Hover Effect */
+.reason-card:hover {
+  transform: translateY(-10px); /* Lifts the card up */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+  background-color: #f8fff9; /* Light green tint on hover */
+}
+
+.icon-wrapper {
+  transition: transform 0.3s ease;
+}
+
+.reason-card:hover .icon-wrapper {
+  transform: scale(1.2) rotate(5deg); /* Pops the icon out */
+}
+
+.why-invest h2 {
+    letter-spacing: 1px;
+}
+/* Vibrant Platform Styles */
+.bg-dark {
+  background-color: #0b0e11 !important; /* Darker, sleek trading background */
+}
+
+.platform-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 20px;
+}
+
+/* Glassmorphism effect on hover */
+.platform-card:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  cursor: pointer;
+}
+
+.platform-card h4 {
+  letter-spacing: -0.5px;
+}
+
+.text-secondary {
+  color: #848e9c !important; /* Trading-style gray */
+}
+.investment-card {
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent !important;
+}
+
+/* Interactivity: Card lifts and shows a green border on hover */
+.investment-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important;
+  border-bottom: 3px solid #006633 !important;
+  cursor: pointer;
+}
+
+.investment-card .badge {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

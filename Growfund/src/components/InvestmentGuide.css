@@ -1,0 +1,16 @@
+.guide-section {
+  background-color: #121212 !important; /* Deep dark background */
+}
+
+.text-secondary {
+  color: #a0a0a0 !important; /* Muted text for descriptions */
+}
+
+/* Red accent for the vertical lines in the support grid */
+.border-danger {
+  border-color: #e31e24 !important;
+}
+
+.btn-danger {
+  background-color: #e31e24 !important;
+}

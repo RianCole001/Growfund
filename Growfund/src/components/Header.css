@@ -1,0 +1,214 @@
+/* Header.css */
+
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #f0fdf4, #d8f3dc); /* Updated: soft green gradient */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 42px;
+  height: auto;
+}
+
+.logo span {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2d6a4f;
+}
+
+/* Nav */
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #2d6a4f;
+  left: 0;
+  bottom: -6px;
+  transition: width 0.3s ease;
+}
+
+.nav ul li a:hover {
+  color: #2d6a4f;
+}
+
+.nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* CTA Button */
+.cta-button {
+  background: linear-gradient(135deg, #2d6a4f, #40916c);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(45, 106, 79, 0.3);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .nav.open {
+    max-height: 300px;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .cta-button {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Hamburger Animation */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .header {
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+body.dark-mode .logo span {
+  color: #90ee90; /* light green */
+}
+
+body.dark-mode .nav ul li a {
+  color: #ddd;
+}
+
+body.dark-mode .nav ul li a:hover {
+  color: #90ee90;
+}
+
+body.dark-mode .nav ul li a::after {
+  background: #90ee90;
+}
+
+body.dark-mode .cta-button {
+  background: linear-gradient(135deg, #40916c, #2d6a4f);
+  color: #fff;
+  box-shadow: none;
+}
+
+body.dark-mode .cta-button:hover {
+  box-shadow: 0 8px 20px rgba(144, 238, 144, 0.6);
+}
+
+body.dark-mode .hamburger span {
+  background-color: #ddd;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  margin-left: 15px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .dark-mode-toggle {
+  color: #90ee90;
+}
+
+/* Responsive adjustments for toggle */
+@media (max-width: 768px) {
+  .dark-mode-toggle {
+    margin-left: 8px;
+  }
+}

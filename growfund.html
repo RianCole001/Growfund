@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GlowFund Investments</title>
+
+  <style>
+    :root {
+      --bg-dark: #0b0f1a;
+      --bg-light: #11172a;
+      --primary: #38f2af;
+      --secondary: #4f7cff;
+      --text-main: #ffffff;
+      --text-muted: #b5bdd9;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", system-ui, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, var(--bg-dark), var(--bg-light));
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5%;
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    header button {
+      background: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    header button:hover {
+      background: var(--primary);
+      color: #000;
+    }
+
+    .hero {
+      padding: 6rem 5% 4rem;
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .cta {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cta button {
+      padding: 0.9rem 1.8rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .cta .primary {
+      background: var(--primary);
+      color: #000;
+    }
+
+    .cta .primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(56,242,175,0.3);
+    }
+
+    .cta .secondary {
+      background: transparent;
+      border: 1px solid var(--secondary);
+      color: var(--secondary);
+    }
+
+    .features {
+      padding: 4rem 5%;
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background: rgba(255,255,255,0.04);
+      padding: 2rem;
+      border-radius: 14px;
+      transition: 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .feature-card h3 {
+      margin-bottom: 0.8rem;
+      color: var(--primary);
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .stats {
+      padding: 4rem 5%;
+      text-align: center;
+    }
+
+    .stats h2 {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .stats-grid {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .stat h3 {
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    .stat p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .signup {
+      padding: 4rem 5%;
+      text-align: center;
+    }
+
+    .signup h2 {
+      margin-bottom: 1.2rem;
+    }
+
+    .signup input {
+      padding: 0.8rem;
+      width: 260px;
+      border-radius: 6px;
+      border: none;
+      margin-right: 0.5rem;
+    }
+
+    .signup button {
+      padding: 0.8rem 1.4rem;
+      border-radius: 6px;
+      border: none;
+      background: var(--secondary);
+      color: #fff;
+      cursor: pointer;
+    }
+
+    footer {
+      padding: 2rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>GlowFund</h1>
+    <button>Login</button>
+  </header>
+
+  <section class="hero">
+    <h2>Invest Smarter. <span>Grow Brighter.</span></h2>
+    <p>
+      GlowFund Investments is a modern investment platform built to help you
+      grow wealth with confidence, transparency, and smart automation.
+    </p>
+
+    <div class="cta">
+      <button class="primary">Get Started</button>
+      <button class="secondary">Learn More</button>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature-card">
+      <h3>📈 Smart Portfolios</h3>
+      <p>Diversified, AI-optimized portfolios designed to match your goals and risk level.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>🔒 Secure by Design</h3>
+      <p>Enterprise-grade encryption and compliance to keep your investments protected.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>⚡ Real-Time Insights</h3>
+      <p>Track performance, returns, and market trends with live analytics.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>🌍 Global Access</h3>
+      <p>Invest in global markets from one unified platform.</p>
+    </div>
+  </section>
+
+  <section class="stats">
+    <h2>Trusted by Growing Investors</h2>
+    <div class="stats-grid">
+      <div class="stat">
+        <h3>$1.2B+</h3>
+        <p>Assets Managed</p>
+      </div>
+      <div class="stat">
+        <h3>120K+</h3>
+        <p>Active Investors</p>
+      </div>
+      <div class="stat">
+        <h3>99.9%</h3>
+        <p>Platform Uptime</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="signup">
+    <h2>Start Growing Today</h2>
+    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+      Join GlowFund and take control of your financial future.
+    </p>
+
+    <input type="email" placeholder="Enter your email" />
+    <button>Join Waitlist</button>
+  </section>
+
+  <footer>
+    © 2026 GlowFund Investments. All rights reserved.
+  </footer>
+
+</body>
+</html>
