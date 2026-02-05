@@ -5,7 +5,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
+import WhatsAppButton from "./components/WhatsAppButton";
 import Home from "./pages/Home";
 import AboutPage from "./components/AboutPage";
 import InvestmentPlans from "./components/InvestmentPlans";
@@ -24,6 +24,7 @@ function App() {
       </Routes>
 
       <Footer />
+      <WhatsAppButton />
     </BrowserRouter>
   );
 }
