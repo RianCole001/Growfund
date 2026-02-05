@@ -6,34 +6,25 @@ const InvestmentOpportunities = () => {
   const opportunities = {
     Crypto: {
       title: "Top Performing Assets",
-      description:
-        "Access a curated selection of high-potential coins. From Bitcoin and Ethereum to emerging DeFi tokens, trade the assets shaping the future of finance.",
-      stat1: "Active Coins",
-      val1: "250+",
-      stat2: "Market Trend",
-      val2: "Bullish",
+      description: "Access a curated selection of high-potential coins. From Bitcoin and Ethereum to emerging DeFi tokens.",
+      stat1: "Active Coins", val1: "250+",
+      stat2: "Market Trend", val2: "Bullish",
       img: "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?auto=format&fit=crop&w=600&q=80",
       btnText: "Buy Coins",
     },
     "High-Yield": {
       title: "60% Return Growth Plan",
-      description:
-        "Our signature 'Vibrant Growth' money investment plan is designed for maximum velocity, targeting 60% returns through strategic liquidity mining and venture capital.",
-      stat1: "Target Return",
-      val1: "60%",
-      stat2: "Lock Period",
-      val2: "12 Mo.",
+      description: "Our signature 'Vibrant Growth' plan targeting 60% returns through strategic liquidity mining.",
+      stat1: "Target Return", val1: "60%",
+      stat2: "Lock Period", val2: "12 Mo.",
       img: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=600&q=80",
       btnText: "Invest Now",
     },
     "Real Estate": {
       title: "Digital Real Estate",
-      description:
-        "Invest in high-value properties without the paperwork. Own fractional shares of prime commercial and residential real estate globally.",
-      stat1: "Min. Entry",
-      val1: "$500",
-      stat2: "Avg. Yield",
-      val2: "12-18%",
+      description: "Invest in high-value properties without the paperwork. Own fractional shares globally.",
+      stat1: "Min. Entry", val1: "$500",
+      stat2: "Avg. Yield", val2: "12-18%",
       img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80",
       btnText: "View Properties",
     },
@@ -44,32 +35,15 @@ const InvestmentOpportunities = () => {
   return (
     <section className="opportunities-section py-4 py-md-5 bg-white">
       <div className="container">
-        {/* Header Section */}
-        <div className="d-flex justify-content-between align-items-center flex-wrap mb-4">
-          <div className="mb-2 mb-md-0">
-            <h6 className="text-danger text-uppercase fw-bold m-0 small">
-              Profit Centers
-            </h6>
-            <h2 className="fw-bold h1-mobile">
-              <span className="text-dark">Key</span>{" "}
-              <span className="text-secondary opacity-50">opportunities</span>
-            </h2>
-          </div>
-          <button className="btn btn-outline-danger rounded-pill px-4 btn-sm">
-            View all plans ↗
-          </button>
-        </div>
-
-        {/* Tabs Section - Fixed for Mobile Visibility */}
-        <div className="border-bottom mb-4 mb-md-5 w-100 overflow-hidden">
-          <ul className="nav nav-underline flex-nowrap overflow-x-auto pb-1 custom-scrollbar-hide">
+        
+        {/* 1. TABS FIRST (Mobile-First View) */}
+        <div className="tabs-wrapper mb-3">
+          <ul className="nav nav-underline custom-nav-scroll">
             {Object.keys(opportunities).map((tab) => (
               <li className="nav-item" key={tab}>
                 <button
-                  className={`nav-link fw-bold text-nowrap border-0 bg-transparent px-3 py-2 ${
-                    activeTab === tab
-                      ? "active text-danger border-bottom border-danger border-3"
-                      : "text-secondary opacity-75"
+                  className={`nav-link fw-bold border-0 bg-transparent ${
+                    activeTab === tab ? "active text-danger border-bottom border-danger border-3" : "text-secondary opacity-75"
                   }`}
                   onClick={() => setActiveTab(tab)}
                 >
@@ -80,47 +54,41 @@ const InvestmentOpportunities = () => {
           </ul>
         </div>
 
-        {/* Content Section */}
-        <div className="row align-items-center g-4 g-lg-5">
-          {/* Image Column - Stacks first on mobile for better visual flow */}
-          <div className="col-12 col-lg-6 order-1 order-lg-2">
-            <div className="position-relative overflow-hidden rounded-4 shadow-lg image-container">
-              <img
-                src={data.img}
-                className="img-fluid opportunity-img w-100"
-                alt={activeTab}
-              />
-              <div className="overlay-badge bg-danger text-white px-3 py-2 fw-bold">
-                Trending 🔥
-              </div>
+        {/* 2. HEADER BELOW TABS */}
+        <div className="row align-items-center mb-4 g-2">
+          <div className="col-8 col-md-auto">
+            <h6 className="text-danger text-uppercase fw-bold m-0 small">Profit Centers</h6>
+            <h2 className="fw-bold h1-mobile m-0">Key <span className="text-secondary opacity-50">opportunities</span></h2>
+          </div>
+          <div className="col-4 col-md-auto text-end">
+            <button className="btn btn-outline-danger btn-sm rounded-pill px-2 px-md-3">View all ↗</button>
+          </div>
+        </div>
+
+        {/* 3. MAIN CONTENT */}
+        <div className="row g-4 mt-2">
+          <div className="col-12 col-lg-6 order-lg-2">
+            <div className="image-wrapper rounded-4 shadow-sm position-relative overflow-hidden">
+              <img src={data.img} className="img-fluid opportunity-img" alt={activeTab} />
+              <span className="badge bg-danger position-absolute top-0 end-0 m-3 p-2">Trending 🔥</span>
             </div>
           </div>
-
-          {/* Text Content Column */}
-          <div className="col-12 col-lg-6 order-2 order-lg-1">
-            <h3 className="fw-bold mb-3 mb-md-4">{data.title}</h3>
-            <p className="text-muted mb-4 mb-md-5">{data.description}</p>
-
-            <div className="row mb-4 mb-md-5 g-3">
+          <div className="col-12 col-lg-6 order-lg-1">
+            <h3 className="fw-bold mt-2">{data.title}</h3>
+            <p className="text-muted small-mobile-text">{data.description}</p>
+            <div className="row g-0 border-top border-bottom py-3 my-4">
               <div className="col-6">
-                <h2 className="fw-bold text-danger m-0 h2-mobile">{data.val1}</h2>
-                <p className="text-uppercase text-muted small fw-bold mb-0">
-                  {data.stat1}
-                </p>
+                <div className="h2 fw-bold text-danger mb-0">{data.val1}</div>
+                <div className="small text-uppercase text-muted fw-bold">{data.stat1}</div>
               </div>
-              <div className="col-6 border-start ps-4 border-danger">
-                <h2 className="fw-bold text-dark m-0 h2-mobile">{data.val2}</h2>
-                <p className="text-uppercase text-muted small fw-bold mb-0">
-                  {data.stat2}
-                </p>
+              <div className="col-6 border-start ps-3 border-danger">
+                <div className="h2 fw-bold text-dark mb-0">{data.val2}</div>
+                <div className="small text-uppercase text-muted fw-bold">{data.stat2}</div>
               </div>
             </div>
-
-            <div className="d-grid d-md-block">
-              <button className="btn btn-danger btn-lg rounded-pill px-5 shadow-lg scale-hover">
-                {data.btnText} ↗
-              </button>
-            </div>
+            <button className="btn btn-danger btn-lg rounded-pill w-100 w-md-auto px-5">
+              {data.btnText} ↗
+            </button>
           </div>
         </div>
       </div>

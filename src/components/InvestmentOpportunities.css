@@ -1,92 +1,56 @@
-/* Container Spacing */
+/* Ensure the section doesn't leak off-screen */
 .opportunities-section {
-  overflow-x: hidden; /* Prevent horizontal page scroll */
+  overflow-x: hidden;
+  width: 100%;
 }
 
-/* Tabs: Critical Fix for Horizontal Scrolling on Small Screens */
-.opportunities-section .nav-underline {
+/* THE FIX: Force tabs to be visible and scrollable */
+.custom-nav-scroll {
   display: flex !important;
-  flex-wrap: nowrap !important; /* Forces items to stay in one row */
-  overflow-x: auto !important; /* Enables swiping */
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  padding-bottom: 8px !important;
+  min-height: 45px; /* Forced height to prevent collapse */
+  border-bottom: 1px solid #dee2e6;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Firefox hide scrollbar */
 }
 
-.opportunities-section .nav-underline::-webkit-scrollbar {
-  display: none; /* Chrome/Safari hide scrollbar */
+.custom-nav-scroll .nav-item {
+  flex: 0 0 auto !important; /* Prevents text from being deleted */
 }
 
-.opportunities-section .nav-item {
-  flex: 0 0 auto; /* Prevents tabs from squishing */
+.custom-nav-scroll .nav-link {
+  white-space: nowrap !important;
+  font-size: 0.95rem;
+  color: #6c757d;
+  padding: 0.5rem 1rem !important;
 }
 
-.opportunities-section .nav-underline .nav-link {
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  border-bottom: 3px solid transparent;
+.custom-nav-scroll .nav-link.active {
+  color: #dc3545 !important;
+  border-bottom: 3px solid #dc3545 !important;
 }
 
-.opportunities-section .nav-underline .nav-link.active {
-  color: #e31e24 !important;
-  border-bottom-color: #e31e24 !important;
-}
-
-/* Image Handling */
-.image-container {
-  border-radius: 1rem;
-}
-
+/* Image Fix */
 .opportunity-img {
   width: 100%;
-  height: 400px; /* Default desktop height */
+  height: 250px;
   object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-.opportunity-img:hover {
-  transform: scale(1.05);
-}
-
-/* UI Accents */
-.btn-danger {
-  background-color: #e31e24 !important;
-  border-color: #e31e24 !important;
-}
-
-.scale-hover {
-  transition: transform 0.2s ease-in-out;
-}
-
-.scale-hover:hover {
-  transform: scale(1.03);
-}
-
-.overlay-badge {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  border-radius: 8px;
-  font-size: 0.75rem;
-  z-index: 2;
-}
-
-/* Mobile Responsive Adjustments */
-@media (max-width: 768px) {
-  .h1-mobile {
-    font-size: 1.8rem; /* Prevents title from taking too much vertical space */
-    line-height: 1.2;
-  }
-  
-  .h2-mobile {
-    font-size: 1.6rem;
-  }
-
+@media (min-width: 768px) {
   .opportunity-img {
-    height: 250px; /* Shorter images for mobile usability */
+    height: 400px;
   }
+}
 
-  .opportunities-section .nav-underline .nav-link {
-    font-size: 0.95rem; /* Better fit for small phones */
-    padding: 0.5rem 0.8rem;
+/* Typography Fixes for tiny screens */
+@media (max-width: 400px) {
+  .h1-mobile {
+    font-size: 1.4rem !important;
+  }
+  .small-mobile-text {
+    font-size: 0.85rem;
   }
 }
