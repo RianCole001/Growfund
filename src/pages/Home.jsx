@@ -15,7 +15,7 @@ const Home = () => {
         title="Welcome to Grow fund, Invest in Growfund"
         subtitle="Unlock new opportunities and grow your business in a thriving new market. Explore with other investors, Traders, and support for your venture."
         buttonText="Get Started"
-        buttonLink="#explore"
+        buttonLink="/journey"
         images={[
           { src: image3, alt: "Investment opportunity 1", caption: "Explore new investment opportunities" },
           { src: image1, alt: "Investment opportunity 2", caption: "Invest with the experts" },

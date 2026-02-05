@@ -21,29 +21,46 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-container">
+        {/* Logo */}
         <div className="logo">
           <img src={logo} alt="GrowFund Logo" />
           <span>GrowFund</span>
         </div>
 
+        {/* Navigation */}
         <nav className={`nav ${menuOpen ? "open" : ""}`}>
           <ul>
             <li>
-              <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+              <Link to="/" onClick={() => setMenuOpen(false)}>
+                Home
+              </Link>
             </li>
             <li>
-               <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
+              <Link to="/about" onClick={() => setMenuOpen(false)}>
+                About
+              </Link>
             </li>
             <li>
-              <Link to="/plans" onClick={() => setMenuOpen(false)}>Investment Plans</Link>
+              <Link to="/plans" onClick={() => setMenuOpen(false)}>
+                Investment Plans
+              </Link>
             </li>
             <li>
-              <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+              <Link to="/contact" onClick={() => setMenuOpen(false)}>
+                Contact
+              </Link>
             </li>
           </ul>
         </nav>
 
-        <button className="cta-button">Get Started</button>
+        {/* Get Started Button */}
+        <Link
+          to="/journey"
+          className="cta-button btn btn-primary"
+          onClick={() => setMenuOpen(false)}
+        >
+          Get Started
+        </Link>
 
         {/* Dark Mode Toggle */}
         <button
@@ -55,6 +72,7 @@ const Header = () => {
           {darkMode ? "🌞" : "🌙"}
         </button>
 
+        {/* Hamburger Menu for Mobile */}
         <div
           className={`hamburger ${menuOpen ? "active" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}

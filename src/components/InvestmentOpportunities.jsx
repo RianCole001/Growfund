@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"; // ✅ Import Link
 import "./InvestmentOpportunities.css";
 
 const InvestmentOpportunities = () => {
@@ -15,7 +16,7 @@ const InvestmentOpportunities = () => {
     "High-Yield": {
       title: "60% Return Plan",
       desc: "Strategic liquidity mining and venture capital for maximum velocity.",
-      stats: [{ label: "Target", val: "60%" }, { label: "Lock", val: "12 Mo." }],
+      stats: [{ label: "Target", val: "60%" }, { label: "Lock", val: " 1Mon." }],
       img: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=600&q=80",
       btn: "Invest Now",
     },
@@ -33,7 +34,6 @@ const InvestmentOpportunities = () => {
   return (
     <section className="invest-section py-5">
       <div className="container">
-        
         <div className="text-center mb-5">
           <span className="badge-custom mb-3">PROFIT CENTERS</span>
           <h2 className="display-6 fw-bold">
@@ -41,7 +41,6 @@ const InvestmentOpportunities = () => {
           </h2>
         </div>
 
-        {/* This wrapper MUST match the CSS below */}
         <div className="tab-pill-wrapper shadow-sm mb-5" role="tablist" aria-label="Investment opportunity tabs">
           {Object.keys(opportunities).map((tabName) => (
             <button
@@ -63,14 +62,24 @@ const InvestmentOpportunities = () => {
           <div className="col-lg-10">
             <div className="modern-card border-0 shadow-lg rounded-5 overflow-hidden">
               <div className="row g-0">
-                <div className="col-md-6 position-relative" id={`panel-${activeTab.replace(/\s+/g, "-")}`} role="tabpanel" aria-labelledby={`tab-${activeTab.replace(/\s+/g, "-")}`}>
-                  <img src={data.img} alt={`${activeTab} preview`} className="img-fluid h-100 w-100 object-fit-cover card-img-side" />
+                <div
+                  className="col-md-6 position-relative"
+                  id={`panel-${activeTab.replace(/\s+/g, "-")}`}
+                  role="tabpanel"
+                  aria-labelledby={`tab-${activeTab.replace(/\s+/g, "-")}`}
+                >
+                  <img
+                    src={data.img}
+                    alt={`${activeTab} preview`}
+                    className="img-fluid h-100 w-100 object-fit-cover card-img-side"
+                  />
                   <div className="trending-tag-glass">Trending 🔥</div>
                 </div>
+
                 <div className="col-md-6 p-4 p-lg-5 bg-white d-flex flex-column justify-content-center">
                   <h3 className="fw-bold h2 mb-3">{data.title}</h3>
                   <p className="text-muted mb-4 lead-sm">{data.desc}</p>
-                  
+
                   <div className="row g-3 mb-4">
                     {data.stats.map((s, i) => (
                       <div key={i} className="col-6">
@@ -82,9 +91,13 @@ const InvestmentOpportunities = () => {
                     ))}
                   </div>
 
-                  <button className="btn btn-danger btn-lg rounded-pill w-100 py-3 fw-bold shadow-sm hover-up">
+                  {/* ✅ Updated button to link to /journey */}
+                  <Link
+                    to="/journey"
+                    className="btn btn-danger btn-lg rounded-pill w-100 py-3 fw-bold shadow-sm hover-up text-center"
+                  >
                     {data.btn} ↗
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -42,8 +42,8 @@ const Footer = () => {
 
           <div className="col-12 col-md-3">
             <h6 className="fw-bold">Contact</h6>
-            <address className="small text-muted mb-2">123 Growth Ave, Suite 400<br/>Capital City, CA 90000</address>
-            <div className="small"><a href="mailto:hello@growfund.com">hello@growfund.com</a> · <a href="tel:+1234567890">+1 (234) 567-890</a></div>
+            <address className="small text-muted mb-2">123 Growth Ave, Suite 400<br/>Capital City, CA United State</address>
+            <div className="small"><a href="mailto:hello@growfund.com">Growfundinvestments@gmail.com</a> · <a href="tel:+1234567890">+1 (234) 567-890</a></div>
           </div>
         </div>
 
