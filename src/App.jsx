@@ -7,10 +7,9 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
-import AboutCompany from "./components/AboutCompany";
-import InvestmentPlans from "./components/InvestmentPlans";
-import AboutHero from "./components/AboutHero";
 import AboutPage from "./components/AboutPage";
+import InvestmentPlans from "./components/InvestmentPlans";
+import Contact from "./components/Contact"; // make sure filename matches
 
 function App() {
   return (
@@ -21,6 +20,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/plans" element={<InvestmentPlans />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
 
       <Footer />

@@ -1,14 +1,89 @@
 .investment-plans {
-  background: #ffffff;
+  background: #fdfdfd;
 }
 
+.investment-plans h2 {
+  color: #0d6efd;
+  font-size: 2.2rem;
+}
+
+.investment-plans p.lead {
+  font-size: 1.1rem;
+  color: #6c757d;
+}
+
+/* Card Styles */
 .plan-card {
-  border-radius: 12px;
-  background: #f8f9fa;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .plan-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Overlay for readability */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* gradient for style + readability */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.7));
+  border-radius: 16px;
+  z-index: 0;
+}
+
+/* Text on top */
+.plan-card h3.plan-title,
+.plan-card p.plan-desc,
+.plan-card button {
+  position: relative;
+  z-index: 1;
+}
+
+/* Title */
+.plan-card h3.plan-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+/* Description */
+.plan-card p.plan-desc {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #f8f9fa; /* off-white text on overlay */
+  flex-grow: 1;
+}
+
+/* Button */
+.plan-card button {
+  border-radius: 50px;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #0d6efd;
+  border: none;
+}
+
+.plan-card button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(13, 110, 253, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .plan-card h3.plan-title {
+    font-size: 1.4rem;
+  }
+
+  .plan-card p.plan-desc {
+    font-size: 0.95rem;
+  }
 }
