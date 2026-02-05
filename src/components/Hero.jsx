@@ -2,18 +2,19 @@ import React, { useEffect, useRef } from "react";
 // Import the Bootstrap JS (make sure you've run: npm install bootstrap)
 import { Carousel } from "bootstrap/dist/js/bootstrap.bundle.min.js"; 
 
-const Hero = ({ title, subtitle, buttonText, buttonLink, images }) => {
+const Hero = ({ title, subtitle, buttonText, buttonLink, images = [] }) => {
   const carouselRef = useRef(null);
 
   useEffect(() => {
     // Manually initialize the carousel when the component mounts
-    if (carouselRef.current) {
+    const imgs = images && images.length ? images : [];
+    if (carouselRef.current && imgs.length) {
       const bsCarousel = new Carousel(carouselRef.current, {
         interval: 3000, // Speed in milliseconds
         ride: 'carousel',
         pause: 'hover'   // Optional: pauses when user mouses over image
       });
-      
+
       return () => bsCarousel.dispose(); // Cleanup on unmount
     }
   }, []);
@@ -40,7 +41,7 @@ const Hero = ({ title, subtitle, buttonText, buttonLink, images }) => {
               className="carousel slide"
             >
               <div className="carousel-inner rounded shadow">
-                {images.map((img, index) => (
+                {(images && images.length ? images : [{ src: 'https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1200&q=80', alt: 'Hero', caption: '' }]).map((img, index) => (
                   <div
                     key={index}
                     className={`carousel-item ${index === 0 ? "active" : ""}`}
@@ -48,7 +49,7 @@ const Hero = ({ title, subtitle, buttonText, buttonLink, images }) => {
                     <img
                       src={img.src}
                       className="d-block w-100"
-                      alt={img.alt}
+                      alt={img.alt || 'Hero image'}
                       style={{ height: "400px", objectFit: "cover" }}
                     />
                     {img.caption && (

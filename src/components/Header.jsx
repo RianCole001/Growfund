@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 import logo from "../assets/images/logo.png";
 
@@ -28,16 +29,16 @@ const Header = () => {
         <nav className={`nav ${menuOpen ? "open" : ""}`}>
           <ul>
             <li>
-              <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
+              <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
             </li>
             <li>
-              <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+              <Link to="/" onClick={() => setMenuOpen(false)}>About</Link>
             </li>
             <li>
-              <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
+              <Link to="/plans" onClick={() => setMenuOpen(false)}>Investment Plans</Link>
             </li>
             <li>
-              <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+              <Link to="/" onClick={() => setMenuOpen(false)}>Contact</Link>
             </li>
           </ul>
         </nav>

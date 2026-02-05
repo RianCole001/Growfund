@@ -1,56 +1,197 @@
-/* Ensure the section doesn't leak off-screen */
-.opportunities-section {
-  overflow-x: hidden;
-  width: 100%;
+/* --- Investment Opportunities — redesigned modern styles --- */
+
+.invest-section {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
+  padding-top: 3rem;
+  padding-bottom: 3.5rem;
 }
 
-/* THE FIX: Force tabs to be visible and scrollable */
-.custom-nav-scroll {
+.badge-custom {
+  display: inline-block;
+  background: rgba(255, 230, 230, 0.9);
+  color: #c82333;
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 1.4px;
+}
+
+/* Tabs container */
+.tab-pill-wrapper {
   display: flex !important;
-  flex-wrap: nowrap !important;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
-  padding-bottom: 8px !important;
-  min-height: 45px; /* Forced height to prevent collapse */
-  border-bottom: 1px solid #dee2e6;
-  -webkit-overflow-scrolling: touch;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.02), rgba(255,255,255,0.7));
+  padding: 6px;
+  border-radius: 999px;
+  width: fit-content;
+  margin: 0 auto;
+  border: 1px solid rgba(18,18,18,0.04);
+  position: relative;
 }
 
-.custom-nav-scroll .nav-item {
-  flex: 0 0 auto !important; /* Prevents text from being deleted */
-}
-
-.custom-nav-scroll .nav-link {
-  white-space: nowrap !important;
-  font-size: 0.95rem;
+.tab-pill-item {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  padding: 10px 20px;
+  border-radius: 999px !important;
+  font-weight: 700;
   color: #6c757d;
-  padding: 0.5rem 1rem !important;
+  font-size: 0.95rem;
+  transition: transform 0.18s ease, color 0.18s ease, background 0.18s ease;
+  cursor: pointer;
+  position: relative;
 }
 
-.custom-nav-scroll .nav-link.active {
-  color: #dc3545 !important;
-  border-bottom: 3px solid #dc3545 !important;
+.tab-pill-item:hover {
+  transform: translateY(-3px);
 }
 
-/* Image Fix */
-.opportunity-img {
-  width: 100%;
-  height: 250px;
+.tab-pill-item.active {
+  background: #ffffff !important;
+  color: #c82333 !important;
+  box-shadow: 0 8px 30px rgba(200, 35, 51, 0.12) !important;
+  animation: pill-pop 420ms cubic-bezier(.2,.8,.2,1);
+}
+
+/* animated underline / glow for active pill */
+.tab-pill-item.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -8px;
+  width: 56%;
+  height: 6px;
+  background: linear-gradient(90deg, rgba(255,107,107,0.95), rgba(200,35,51,0.95));
+  border-radius: 999px;
+  filter: blur(6px);
+  opacity: 0.95;
+  transition: all 260ms ease;
+}
+
+/* subtle expanding pulse */
+.tab-pill-item.active::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%) scale(0.6);
+  width: 8px;
+  height: 8px;
+  background: rgba(200,35,51,0.12);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: pill-pulse 900ms ease-out;
+}
+
+@keyframes pill-pop {
+  0% { transform: translateY(0) scale(1); }
+  60% { transform: translateY(-6px) scale(1.04); }
+  100% { transform: translateY(0) scale(1.02); }
+}
+
+@keyframes pill-pulse {
+  0% { transform: translate(-50%,-50%) scale(0.6); opacity: 0.9; }
+  100% { transform: translate(-50%,-50%) scale(6); opacity: 0; }
+}
+
+/* keyboard focus visible */
+.tab-pill-item:focus-visible {
+  outline: none;
+  box-shadow: 0 10px 28px rgba(200,35,51,0.12);
+}
+
+/* Card */
+.modern-card {
+  background: linear-gradient(180deg, #ffffff, #ffffff);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 1rem;
+}
+
+.modern-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+}
+
+.card-img-side {
+  min-height: 320px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.col-md-6.position-relative:hover .card-img-side {
+  transform: scale(1.03);
+}
+
+.trending-tag-glass {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: linear-gradient(90deg, rgba(220,53,69,0.95), rgba(255,99,132,0.85));
+  color: white;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.75rem;
+  box-shadow: 0 8px 20px rgba(200, 35, 51, 0.14);
+}
+
+.stat-box-modern {
+  background: #fff;
+  border: 1px solid rgba(18,18,18,0.04);
+  text-align: center;
+  padding: 0.9rem;
+}
+
+.stat-box-modern .h3 {
+  color: #c82333;
+}
+
+.stat-label {
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #9aa3ad;
+  font-size: 0.68rem;
+  letter-spacing: 0.6px;
+  margin-top: 6px;
+}
+
+.hover-up:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(200, 35, 51, 0.12) !important;
+}
+
+/* Small screens: make pills scrollable */
+@media (max-width: 576px) {
+  .tab-pill-wrapper {
+    width: 96%;
+    overflow-x: auto;
+    padding: 6px 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tab-pill-item {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    flex: 0 0 auto;
+  }
+  .card-img-side {
+    min-height: 220px;
+  }
+}
+
+/* Utility to keep image aspect */
+.object-fit-cover {
   object-fit: cover;
 }
 
-@media (min-width: 768px) {
-  .opportunity-img {
-    height: 400px;
-  }
-}
-
-/* Typography Fixes for tiny screens */
-@media (max-width: 400px) {
-  .h1-mobile {
-    font-size: 1.4rem !important;
-  }
-  .small-mobile-text {
-    font-size: 0.85rem;
+/* subtle responsive spacing for the right column */
+@media (max-width: 768px) {
+  .modern-card .col-md-6.p-4.p-lg-5 {
+    padding: 1.5rem !important;
   }
 }
