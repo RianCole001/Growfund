@@ -1,0 +1,14 @@
+.investment-plans {
+  background: #ffffff;
+}
+
+.plan-card {
+  border-radius: 12px;
+  background: #f8f9fa;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}

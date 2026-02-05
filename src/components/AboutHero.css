@@ -1,0 +1,18 @@
+.about-hero {
+  min-height: 80vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.about-hero .container {
+  position: relative;
+  max-width: 720px;
+}
